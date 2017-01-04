@@ -1,22 +1,22 @@
-//make sure to change "username"/"gabrielbarriga" to your localhost's username
+//make sure to change "username"/"salinafu" to your localhost's username
 
 {
   "development": {
-    "username": "gabrielbarriga",
+    "username": "salinafu",
     "password": null,
     "database": "nycbnb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "gabrielbarriga",
+    "username": "salinafu",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "gabrielbarriga",
+    "username": "salinafu",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",

@@ -1,5 +1,3 @@
-//make sure to change "username"/"gabrielbarriga" to your localhost's username
-
 {
   "development": {
     "username": "gabrielbarriga",

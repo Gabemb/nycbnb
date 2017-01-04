@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         Listing.belongsTo(models.User);
-        Listing.hasMany(models.Booking)
+        Listing.hasMany(models.Booking);
       }
     }
   });

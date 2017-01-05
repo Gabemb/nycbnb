@@ -3,16 +3,17 @@ module.exports = function(sequelize, DataTypes) {
   var Booking = sequelize.define('Booking', {
     checkIn: {
       type: DataTypes.DATEONLY,
-      isDate: true
+      isDate: true,
+      allowNull: false
     },
     checkOut: {
       type: DataTypes.DATEONLY,
-      isDate: true
+      isDate: true,
+      allowNull: false
     }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
         Booking.belongsTo(models.User);
         Booking.belongsTo(models.Listing);
       }

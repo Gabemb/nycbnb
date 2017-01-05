@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     images: {
       type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
+      allowNull: false
     },
     guestLimit: {
       type: DataTypes.INTEGER,
@@ -22,16 +22,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     borough: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     availability: {
       type: DataTypes.RANGE(DataTypes.DATEONLY),
-      allowNull: false,
+      allowNull: false
     }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
         Listing.belongsTo(models.User);
         Listing.hasMany(models.Booking);
       }

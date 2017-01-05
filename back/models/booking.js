@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = function(sequelize,
   DataTypes) {
   var Booking = sequelize.define('Booking', {
@@ -17,7 +18,6 @@ module.exports = function(sequelize,
       associate: function(models) {
         Booking.belongsTo(models.User);
         Booking.belongsTo(models.Listing);
-
       }
     }
   });

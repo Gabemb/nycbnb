@@ -17,8 +17,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     guestLimit: {
       type: DataTypes.INTEGER,
-      isInt: true,
-      allowNull: false
+      allowNull: false,
+      isInt: true
     },
     borough: {
       type: DataTypes.STRING,
@@ -31,6 +31,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
+
         Listing.belongsTo(models.User);
         Listing.hasMany(models.Booking);
       }

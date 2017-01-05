@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     firstName: {
-     type: DataTypes.STRING,
+     type:DataTypes.STRING,
       allowNull: false,
       isAlpha: true
     },
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false
-      len: [5,35]
+      len: [5,35]  
     }
   }, {
     classMethods: {
@@ -31,3 +31,5 @@ module.exports = function(sequelize, DataTypes) {
   });
   return User;
 };                                          
+
+

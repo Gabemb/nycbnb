@@ -18,8 +18,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
-      len: [5,35]  
+      allowNull: false,
+      len: [5, 35]  
     }
   }, {
     classMethods: {

@@ -8,8 +8,8 @@ module.exports = function(sequelize,
       isDate: true,
       allowNull: false
     },
-    checkOut: { 
-      type: DataTypes.DATEONLY
+    checkOut: {
+      type: DataTypes.DATEONLY,
       isDate: true,
       allowNull: false
     }

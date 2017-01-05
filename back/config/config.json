@@ -1,22 +1,23 @@
 {
   "development": {
-    "username": "michaeldinnall",
+    "username": "salinafu",
     "password": null,
     "database": "nycbnb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "michaeldinnall",
+    "username": "salinafu",
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "michaeldinnall",
+    "username": "salinafu",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
+}

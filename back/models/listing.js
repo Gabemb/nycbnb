@@ -4,36 +4,37 @@ module.exports = function(sequelize, DataTypes) {
     price: {
       type: DataTypes.INTEGER,
       isInt: true,
-    description:{
-    type:DataTypes.STRING,
-    allowNull: false,
-    len: [200,2000]
-  },
-   images: {
-    type: DataTypes.ARRAY(DataTypes.STRING),
-    allowNull: false
-  },
-    guestLimit: {
-      type:DataTypes.INTEGER,
-      isInt: true,
-      allowNull:false
-    },
-    borough: {
-      type:DataTypes.STRING,
       allowNull: false
     },
-    availability: DataTypes.BOOLEAN
-  }
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      len: [200, 2000]
+    },
+    images: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false
+    },
+    guestLimit: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isInt: true
+    },
+    borough: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    availability: {
+      type: DataTypes.RANGE(DataTypes.DATEONLY),
+      allowNull: false
+    }
   }, {
     classMethods: {
       associate: function(models) {
         Listing.belongsTo(models.User);
         Listing.hasMany(models.Booking);
-        // associations can be defined here
       }
     }
   });
   return Listing;
 };
-
-   

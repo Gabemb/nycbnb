@@ -1,7 +1,9 @@
 'use strict';
-module.exports = function(sequelize, DataTypes) {
+
+module.exports = function(sequelize,
+  DataTypes) {
   var Booking = sequelize.define('Booking', {
-    checkIn: {
+    checkIn: { 
       type: DataTypes.DATEONLY,
       isDate: true,
       allowNull: false

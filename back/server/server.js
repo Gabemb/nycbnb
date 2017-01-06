@@ -9,8 +9,10 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json())
 app.use(express.static('public'))
 
+
 app.use("/*", router)
 
+//connect database to server
 db.sequelizeConnection.sync().then(function() {
 	console.log("Listening on port 3000");
   app.listen(3000)

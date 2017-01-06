@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "webpack --watch & nodemon ./back/server/server.js",
+    "seed": "node ./back/seeders/user-seed.js && node ./back/seeders/listing-seed.js",
     "test": "mocha --watch"
   },
   "keywords": [],

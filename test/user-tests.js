@@ -8,7 +8,7 @@ describe('User tests', () => {
  var users = [
     {firstName: 'craig',lastName: 'Maya', email: 'craig@gmail.com',password: 'pass1'},
     {firstName: 'james',lastName: 'Wall' ,email: 'james@gmail.com',password: 'pass2'},
-    {firstName: 'william',lastName: 'Jin', email: 'william@gmail.com',password: 'pass3'},
+    {firstName: 'william',lastName: 'Jin', email: 'william@gmail.com',password: 'pass3'}
   ];
 
 
@@ -26,9 +26,9 @@ describe('User tests', () => {
       .get('/users')
       .end((err, res) => {
       	expect(res.body.length).to.eql(3)
-        expect(res.body[0].firstName).to.eql(users[0].firstName);
-        expect(res.body[1].firstName).to.eql(users[0].firstName);
-        expect(res.body[2].firstName).to.eql(users[0].firstName);
+        expect(res.body[0].firstName).to.equal(users[0].firstName);
+        expect(res.body[1].firstName).to.equal(users[0].firstName);
+        expect(res.body[2].firstName).to.equal(users[0].firstName);
         //done is required in order to execute the test
         done();
       })

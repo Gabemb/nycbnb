@@ -31,9 +31,9 @@ describe('Listing tests', () => {
 	});
 
 
-  it(`'/listings' should return all listings'`, (done) => {
+  it(`'/listing' should return all listings'`, (done) => {
     supertest(server)
-      .get('/listings')
+      .get('/listing')
       .end((err, res) => {
         expect(res.body.length).equal(2);
         expect(res.body[0].images).equal(listings[0].images[0]);
@@ -46,9 +46,9 @@ describe('Listing tests', () => {
       })
   });
 
-  it(`'/listings/:id' should return an individual listing'`, (done) => {
+  it(`'/listing/:id' should return an individual listing'`, (done) => {
     supertest(server)
-      .get('/listings/' + 1)
+      .get('/listing/' + 1)
       .end((err, res) => {
         expect(res.body.length).equal(1);
         expect(res.body[0].images).equal(listings[0].images);
@@ -62,9 +62,9 @@ describe('Listing tests', () => {
       })
   });
 
-  it(`'/listings' should create a new listing'`, (done) => {
+  it(`'/listing' should create a new listing'`, (done) => {
     supertest(server)
-      .post('/listings')
+      .post('/listing')
       .send({
       	price: 180,
 		description: "Small apartment located in Hells Kitchen. Walking distance to Times Square and all major transit lines. Perfect for a duo traveling to the city!",
@@ -83,9 +83,9 @@ describe('Listing tests', () => {
       })
   });
 
-  it(`'/listings/:borough' should return all listings of that borough'`, (done) => {
+  it(`'/listing/:borough' should return all listings of that borough'`, (done) => {
     supertest(server)
-      .get('/listings/statenisland')
+      .get('/listing/statenisland')
       .end((err, res) => {
         expect(res.body.length).equal(1);
         expect(res.body[1].images).equal(listings[1].images[0]);

@@ -25,25 +25,20 @@ function getUserById(req, res) {
 
 // ********** DELETE a User by id **********
 function deleteUser(req, res) {
-	User.destroy({
-		where: {
-			id: req.params.id
-		}
+	User.findById(req.params.id)
+	.then((user)=> {
+		user.destroy()
 	})
-	.then(function(user) {
-		console.log('This User is no more');
+	.then(()=> {
 		res.send('User has been deleted')
 	})
 }
 
 // ********** POST new Use **********
 function postNewUser(req, res) {
-	Users.create({
-		name: req.body.name
-	})
-	.then(function(Users) {
-		console.log('REQ BODY:', req.body);
-		res.send('ahh shit, you/ve added a new USER')
+	Users.create(req.body)
+	.then((user) => {
+		res.send(user)
 	})
 }
 

@@ -6,9 +6,13 @@ const User = require('../models').User;
 
 // ********** GET all Users **********
 function getAllUsers(req, res) {
-	User.findAll()
+	User.findAll({})
 		.then(function(data) {
 			res.send(data)
+		})
+		.catch(function(error){
+			console.log("ERROR returning all Users in database:", error);
+			res.sendStatus(500);
 		})
 }
 
@@ -36,9 +40,16 @@ function deleteUser(req, res) {
 
 // ********** POST new Use **********
 function postNewUser(req, res) {
-	Users.create(req.body)
-	.then((user) => {
-		res.send(user)
+	Users.create({
+		firstName: req.body.name,
+		lastname: req.body.lastname,
+		email: req.body.email,
+		password:req.body.password
+
+	})
+	.then(function(Users) {
+		console.log('REQ BODY:', req.body);
+		res.send('ahh shit, you/ve added a new USER')
 	})
 }
 
@@ -47,7 +58,7 @@ router.route('/')
 	.get(getAllUsers)
 	.post(postNewUser)
 
-router.route('/:id')
+router.route('/username/:firstName')
 	.get(getUserById)
 	.delete(deleteUser)
 

@@ -62,7 +62,7 @@ describe('Listing tests', () => {
       })
   });
 
-    it(`'/listings' should create a new listing'`, (done) => {
+  it(`'/listings' should create a new listing'`, (done) => {
     supertest(server)
       .post('/listings')
       .send({
@@ -94,4 +94,4 @@ describe('Listing tests', () => {
         done();
       })
   });
-
+});

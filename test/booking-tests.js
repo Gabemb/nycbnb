@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const supertest = require('supertest');
+const moment = require('moment');
 const server = require('../back/server/server.js');
 const Booking = require('../back/models/').Booking;
 
@@ -38,7 +39,7 @@ describe('Booking api route tests', () => {
 		.catch((err) => console.log('DB Err!', err));
 	});
 
-
+  //GET Tests
   it(`'/api/booking/listing/:listingId' should return all Bookings related to a specific Listing'`, (done) => {
     supertest(server)
       .get('/api/booking/listing/2')
@@ -52,7 +53,7 @@ describe('Booking api route tests', () => {
       })
   });
 
-  it(`'/api/booking/user/:userId' should return an individual Booking'`, (done) => {
+  it(`'/api/booking/user/:userId' should return all of an individual's bookings'`, (done) => {
     supertest(server)
       .get('/api/booking/user/3')
       .end((err, res) => {
@@ -65,6 +66,7 @@ describe('Booking api route tests', () => {
       })
   });
 
+  //POST Tests
   it(`'/api/booking' should create a new Booking entry in our database'`, (done) => {
     supertest(server)
       .post('/api/booking')
@@ -83,4 +85,27 @@ describe('Booking api route tests', () => {
       })
   });
 
+  //PUT Tests
+  it(`'/api/booking/:id' should return the updated booking'`, (done) => {
+    supertest(server)
+      .put('/api/booking/3')
+      .send({
+        checkIn: moment('2017-01-13').format('MM/DD/YYYY'),
+        checkOut: moment('2017-01-18').format('MM/DD/YYYY')
+      })
+      .end((err, res) => {
+        expect(res.status).equal(200);
+        done();
+      })
+  });
+
+  //DELETE Tests
+  it(`'/api/booking/:id' should return a 200 status after successful deletion'`, (done) => {
+    supertest(server)
+      .delete('/api/booking/4')
+      .end((err, res) => {
+        expect(res.status).equal(200);
+        done();
+      })
+  });
 });

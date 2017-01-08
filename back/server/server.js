@@ -9,8 +9,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 app.use(express.static('public'));
 
-
-app.use("/*", router);
+app.use("/api", router)
 
 //connect database to server
 db.sequelizeConnection.sync().then(function() {

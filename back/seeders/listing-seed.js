@@ -12,7 +12,7 @@ Listing.sync({force: true})
 	    images: ['https://cdn0.vox-cdn.com/thumbor/OahREQufCXFNLVkRqqWKq3NfY5s=/0x600/cdn0.vox-cdn.com/uploads/chorus_asset/file/4800311/87347949.0.jpg'],
 	    guestLimit: 4,
 	    borough: 'Brooklyn',
-	    availability: [new Date(2017, 0, 1), new Date(2017, 0, 12)],
+	    availability: true,
 	    UserId: 1
 	},
 	{
@@ -21,7 +21,7 @@ Listing.sync({force: true})
 	    images: ['http://activerain.com/image_store/uploads/7/0/0/7/4/ar129374092547007.jpg'],
 	    guestLimit: 6,
 	    borough: 'Staten Island',
-	    availability: [new Date(2017, 2, 10), new Date(2017, 2, 18)],
+	    availability: true,
 	    UserId: 2
 	},
 	{
@@ -30,7 +30,7 @@ Listing.sync({force: true})
 	    images: ['https://a0.muscache.com/im/pictures/103381325/6f2affad_original.jpg'],
 	    guestLimit: 1,
 	    borough: 'Brooklyn',
-	    availability: [new Date(2017, 3, 10), new Date(2017, 3, 14)],
+	    availability: false,
 	    UserId: 4
 	},	
 	{
@@ -39,7 +39,7 @@ Listing.sync({force: true})
 	    images: ['https://a2.muscache.com/im/pictures/1c45cffe-a918-41ae-9cdd-66d7916f8617.jpg'],
 	    guestLimit: 1,
 	    borough: 'Queens',
-	    availability: [new Date(2017, 2, 7), new Date(2017, 2, 13)],
+	    availability: true,
 	    UserId: 3
 	}	{
 	    price: 70,
@@ -47,7 +47,7 @@ Listing.sync({force: true})
 	    images: ['https://a2.muscache.com/im/pictures/c2a41884-7729-481e-9292-2fcd76bf9257.jpg'],
 	    guestLimit: 2,
 	    borough: 'Manhattan',
-	    availability: [new Date(2017, 5, 4), new Date(2017, 6, 3)],
+	    availability: true,
 	    UserId: 6
 	}	{
 	    price: 150,
@@ -55,7 +55,7 @@ Listing.sync({force: true})
 	    images: ['https://a2.muscache.com/im/pictures/b6157654-bc37-4402-b54d-d95ddfa1e034.jpg'],
 	    guestLimit: 2,
 	    borough: 'Manhattan',
-	    availability: [new Date(2017, 2, 10), new Date(2017, 6, 18)],
+	    availability: false,
 	    UserId: 5
 	}
 ]))

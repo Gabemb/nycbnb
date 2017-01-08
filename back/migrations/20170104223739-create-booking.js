@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       checkIn: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.STRING
       },
       checkOut: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

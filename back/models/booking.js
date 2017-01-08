@@ -4,12 +4,12 @@ module.exports = function(sequelize,
   DataTypes) {
   var Booking = sequelize.define('Booking', {
     checkIn: { 
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
       isDate: true,
       allowNull: false
     },
     checkOut: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
       isDate: true,
       allowNull: false
     }

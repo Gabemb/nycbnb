@@ -85,7 +85,7 @@ describe('Listing tests', () => {
 
   it(`'/listing/:borough' should return all listings of that borough'`, (done) => {
     supertest(server)
-      .get('/listing/statenisland')
+      .get('/listings/statenisland')
       .end((err, res) => {
         expect(res.body.length).equal(1);
         expect(res.body[1].images).equal(listings[1].images[0]);

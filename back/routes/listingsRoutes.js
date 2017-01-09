@@ -6,6 +6,7 @@ const allListings=(req, res) => {
 	.then((listings) => {
 		res.send(listings)
 	})
+	.catch((err)=> console.log(err))
 }
 
 const createListing=(req, res) => {
@@ -13,6 +14,7 @@ const createListing=(req, res) => {
 	.then((listing)=> {
 		res.send(listing)
 	})
+	.catch((err)=> console.log(err))
 }
 
 const getOneListing=(req, res) => {
@@ -20,6 +22,7 @@ const getOneListing=(req, res) => {
 	.then((listing)=> {
 		res.send(listing)
 	})
+	.catch((err)=> console.log(err))
 }
 
 const editOneListing=(req, res) => {
@@ -30,7 +33,9 @@ const editOneListing=(req, res) => {
 	.then((listing)=> {
 		res.send(listing)
 	})
+	.catch((err)=> console.log(err))
 }
+
 
 const deleteListing=(req, res)=> {
 	Listing.findById(req.params.id)
@@ -40,6 +45,7 @@ const deleteListing=(req, res)=> {
 	.then(()=> {
 		res.send('Listing has been deleted.')
 	})
+	.catch((err)=> console.log(err))
 }
 
 const listingByBoro=(req, res)=> {
@@ -51,6 +57,7 @@ const listingByBoro=(req, res)=> {
 	.then((listings)=> {
 		res.send(listings)
 	})
+	.catch((err)=> console.log(err))
 }
 
 

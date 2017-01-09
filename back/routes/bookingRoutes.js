@@ -22,8 +22,8 @@ const createNewBooking = (req, res) => {
 // ********** PUT Update a Booking by id **********
 const updateBooking = (req, res) => {
 	Booking.update({
-			checkIn: req.body.checkIn,
-			checkOut: req.body.checkOut
+		checkIn: req.body.checkIn,
+		checkOut: req.body.checkOut
 		},{
 		where: {
 			id: req.params.id

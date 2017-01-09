@@ -6,6 +6,7 @@ const Booking = require('../back/models/').Booking;
 
 describe('Booking api route tests', () => {
 
+  //Some dummy data for the tests
 	let Bookings = [
 		{
       checkIn: moment('2017-01-04').format('MM/DD/YYYY'),

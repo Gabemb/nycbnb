@@ -11,6 +11,10 @@ app.use(express.static('public'));
 
 app.use("/api", router)
 
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../../front/views/index.html'));
+});
+
 //connect database to server
 db.sequelizeConnection.sync().then(function() {
 	console.log("Listening on port 3000");

@@ -12,7 +12,7 @@ describe('Listing tests', () => {
 			images: ['https://cdn0.vox-cdn.com/thumbor/OahREQufCXFNLVkRqqWKq3NfY5s=/0x600/cdn0.vox-cdn.com/uploads/chorus_asset/file/4800311/87347949.0.jpg'],
 			guestLimit: 4,
 			borough: 'Brooklyn',
-			availability: true,
+			availability: 1,
       USerId: 1
 		},
 		{
@@ -21,7 +21,7 @@ describe('Listing tests', () => {
 			images: ['http://activerain.com/image_store/uploads/7/0/0/7/4/ar129374092547007.jpg'],
 			guestLimit: 6,
 			borough: 'Staten Island',
-			availability: true,
+			availability: 1,
       UserId: 2
 		}
 	];

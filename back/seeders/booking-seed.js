@@ -17,7 +17,7 @@ Booking.sync({force: true})
 	   	checkIn: moment(new Date(2017, 2, 10)).format('MM/DD/YYYY'),
 	    checkOut: moment(new Date(2017, 2, 18)).format('MM/DD/YYYY'), 
 	    UserId: 2,
-	    ListinId: 2
+	    ListingId: 2
 	},
 	{
 	   	checkIn: moment(new Date(2017, 3, 10)).format('MM/DD/YYYY'),

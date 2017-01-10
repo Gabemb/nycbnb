@@ -70,7 +70,7 @@ listingRouter.route('/:id')
 	.put(editOneListing)
 	.delete(deleteListing)
 
-listingRouter.route('/:borough')
+listingRouter.route('/where/:borough')
 	.get(listingByBoro)
 
 module.exports=listingRouter;

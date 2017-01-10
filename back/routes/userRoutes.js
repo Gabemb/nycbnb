@@ -48,7 +48,6 @@ function postNewUser(req, res) {
 
 	})
 	.then(function(Users) {
-		console.log('REQ BODY:', req.body);
 		res.send('ahh shit, you/ve added a new USER')
 	})
 }

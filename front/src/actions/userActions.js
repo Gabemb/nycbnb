@@ -1,4 +1,5 @@
 //using axios instead of jquerry
+import $ from 'jquery';
 import axios from 'axios';
 
 
@@ -26,4 +27,3 @@ export const login = function(username, password){
 	}
 
 }
-

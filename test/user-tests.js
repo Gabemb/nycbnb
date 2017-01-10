@@ -47,7 +47,7 @@ describe('User tests:', () => {
 
 
       ////users/:username GET individual user by lastname
-  it('/users/username/:lastName should respond with specific user (by lastName)', (done) => {
+  it('/users/lastname/:lastName should respond with specific user (by lastName)', (done) => {
     supertest(server)
       .get('/api/users/username/Wall')
       .end( (err, res) => {

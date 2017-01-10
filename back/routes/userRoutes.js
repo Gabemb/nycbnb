@@ -29,13 +29,11 @@ function getUserById(req, res) {
 
 // ********** DELETE a User by id **********
 function deleteUser(req, res) {
-	User.destroy({
-		where: {
-			id: req.params.id
-		}
+	User.findById(req.params.id)
+	.then((user)=> {
+		user.destroy()
 	})
-	.then(function(user) {
-		console.log('This User is no more');
+	.then(()=> {
 		res.send('User has been deleted')
 	})
 }

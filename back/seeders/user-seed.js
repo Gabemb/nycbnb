@@ -8,6 +8,7 @@ User.sync({force: true})
 .then(() => User.bulkCreate([
   {firstName: 'Frank', lastName:'Ocean', email:'boysdontcry@gmail.com', password:'Boys1Dont2Cry3'},
   {firstName: 'Albert', lastName:'Einstein', email:'relativity@harvard.edu', password:'Fuck Gravity'},
+  {firstName: 'Barack', lastName:'Obama', email:'hope@columbia.edu', password:'Fuck Trump'},
   {firstName: 'Salina', lastName:'Fu', email:'salinafu@gmail.com', password:'Gabesux'},
   {firstName: 'Michael', lastName:'Dinnall', email:'hoorah@gmail.com', password:'Gabesux'},
   {firstName: 'Gabriel', lastName:'Bollogni', email:'nope@gmail.com', password:'Gabesux'}

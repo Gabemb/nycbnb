@@ -1,4 +1,8 @@
+# Admin config file
 config.json
+
+# Weback bundle files
+public
 
 # Logs
 logs

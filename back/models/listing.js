@@ -25,7 +25,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     availability: {
-      type: DataTypes.RANGE(DataTypes.DATEONLY),
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
       allowNull: false
     }
   }, {

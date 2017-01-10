@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "webpack --watch & nodemon ./back/server/server.js",
-    "seed": "node ./back/seeders/user-seed.js && node ./back/seeders/listing-seed.js",
+    "seed": "node ./back/seeders/user-seed.js && node ./back/seeders/listing-seed.js && node ./back/seeders/booking-seed.js",
     "test": "mocha --watch"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.2",
     "jquery": "^3.1.1",
+    "moment": "^2.17.1",
     "nodemon": "^1.11.0",
     "pg": "^6.1.0",
     "pg-hstore": "^2.3.2",

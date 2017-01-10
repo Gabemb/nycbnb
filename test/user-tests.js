@@ -20,7 +20,7 @@ describe('User tests:', () => {
 
 
 
-     //'/'basic route test 
+     '/'basic route test 
   it(`'/users' should respond with all users in database'`, (done) => {
     supertest(server)
       .get('/api/users')

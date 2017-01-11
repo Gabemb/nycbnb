@@ -1,8 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
-
-// import app
 import App from "./src/components/App"
 
 //Components
@@ -13,8 +11,8 @@ render(
 		<Router history={browserHistory}>
 			<Route path='/'>
 				<IndexRoute component={App}/>
-				<Route path="ListingForm" component={ListingForm} />. 
 			</Route>
 		</Router>,
 	document.getElementById('root')
 )
+// <Route path="ListingForm" component={ListingForm} />. 

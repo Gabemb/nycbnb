@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '../App.css';
 import {Link} from 'react-router';
-
 
 var App = React.createClass({
 	render: function(){
@@ -14,7 +12,7 @@ var App = React.createClass({
 			
 	          <Link className ="signlogin" to='#'>Sign Up</Link>
 	          <Link className ="signlogin" to='#'>Log In</Link>
-	        
+	          <Link to={'/listing/' + 1}><button>To Listing!</button></Link>
 
 			<nav className="navbar navbar-inverse">
 

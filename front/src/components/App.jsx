@@ -10,6 +10,7 @@ var App = React.createClass({
 				<div className='logo-div'>
 					<img className='logo' src={require('../images/nycbnb_logo.png')} />
 				</div>
+				{this.props.children}
 			</div>
 		)
 	}

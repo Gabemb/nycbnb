@@ -6,13 +6,14 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from "./src/components/App"
 
 //Components
-//import ListingForm from './src/forms/'
+import CreateListing from './src/components/CreateListing';
 
 
 render(
 		<Router history={browserHistory}>
-			<Route path='/'>
+			<Route path='/' component={App}>
 				<IndexRoute component={App}/>
+				<Route path='Createlisting' component={CreateListing} />
 			</Route>
 		</Router>,
 	document.getElementById('root')

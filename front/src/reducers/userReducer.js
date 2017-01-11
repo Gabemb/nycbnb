@@ -1,6 +1,6 @@
 //import action types
 
-import * as actions from "../actions/userActions"
+// import * as actions from "../actions/userActions"
 
 //defining statre
 

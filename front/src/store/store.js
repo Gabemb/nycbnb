@@ -34,6 +34,6 @@ const store = createStore(reducers,applyMiddleware(thunk));
 //Salina =================================================================================
 //const store = createStore(reducers, defaultState);
 
-export const history = syncHistoryWithStore(browserHistory, store);
+// export const history = syncHistoryWithStore(browserHistory, store);
 
 export default store;

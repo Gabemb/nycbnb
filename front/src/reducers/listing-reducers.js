@@ -1,4 +1,4 @@
-import * as actions from '../actions/listingActions';
+import {GET_LISTINGS, POST_LISTING, DELETE_LISTING, GET_LISTINGSBORO, GET_ONELISTING, UPDATE_LISTING} from '../actions/listingActions';
 
 const initialState={
 	description: '',

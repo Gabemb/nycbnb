@@ -1,5 +1,5 @@
 import userReducer from "./userReducer";
-import listingReducer from './listingReducer';
+import listingReducer from './listing-reducers';
 import {reducer as formReducer} from 'redux-form'
 // import bookingReducer from "./bookingReducer"
 import {combineReducers} from "redux"

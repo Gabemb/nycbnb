@@ -47,7 +47,7 @@ export const get_listingsboro = (listings) => ({
 
 // ASYNC
 
-export getListingsAsync = () => (dispatch) => {
+export const getListingsAsync = () => (dispatch) => {
 	$.ajax({
 		url: '/api/listing',
 		type: 'GET'
@@ -57,7 +57,7 @@ export getListingsAsync = () => (dispatch) => {
 	})
 }
 
-export postListingAsync = () => (dispatch) => {
+export const postListingAsync = () => (dispatch) => {
 	$.ajax({
 		url: '/api/listing',
 		type: 'POST'
@@ -67,7 +67,7 @@ export postListingAsync = () => (dispatch) => {
 	})
 }
 
-export getOneListingAsync = () => (dispatch) => {
+export const getOneListingAsync = () => (dispatch) => {
 	$.ajax({
 		url: '/api/listing' + {req.params.id},
 		type: 'GET'
@@ -77,7 +77,7 @@ export getOneListingAsync = () => (dispatch) => {
 	})
 }
 
-export deleteListingAsync = () => (dispatch) => {
+export const deleteListingAsync = () => (dispatch) => {
 	$.ajax({
 		url: '/api/listing/' + {req.params.id},
 		type: 'DELETE'
@@ -88,7 +88,7 @@ export deleteListingAsync = () => (dispatch) => {
 	.catch((err)=> console.log(err))
 }
 
-export updateListingAsync = () => (dispatch) => {
+export const updateListingAsync = () => (dispatch) => {
 	$.ajax({
 		url: '/api/listing/' + {req.params.id},
 		type: 'PUT'
@@ -98,7 +98,7 @@ export updateListingAsync = () => (dispatch) => {
 	})
 }
 
-export getListingsBoroAsync = () => (dispatch) => {
+export const getListingsBoroAsync = () => (dispatch) => {
 	$.ajax({
 		url: '/api/listing/where/' + {req.params.borough},
 		type: 'GET'

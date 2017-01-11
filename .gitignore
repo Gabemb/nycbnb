@@ -1,7 +1,10 @@
-config.json
-public
+# Admin config file
+config
 npm-debug.log
 node_modules
+
+# Weback bundle files
+public
 
 
 

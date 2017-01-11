@@ -1,5 +1,7 @@
  const listingRouter=require('express').Router();
 const Listing=require('../models').Listing;
+const User=require('../models').User;
+
 
 const allListings=(req, res) => {
 	Listing.findAll()
@@ -26,10 +28,7 @@ const createListing=(req, res) => {
 
 const getOneListing=(req, res) => {
 	Listing.findById(req.params.id, 
-		{ include: [{
-			model: user,
-			include: [firstName, lastName, email]
-		}]
+		{ include: [ User ]
 	})
 	.then((listing)=> {
 		res.send(listing)

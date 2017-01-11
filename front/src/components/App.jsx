@@ -5,17 +5,10 @@ const App = (props) => {
 	console.log("PROPS ==>", props)
 	return (
 	<div>
-		<h1>User</h1>
-		{ JSON.stringify(props.userState) }
+		<h1>Hello World (from App.jsx)</h1>
 	</div>
 )}
 
-const mapStateToProps = function (state){
-	return {
-		userState: state.user,
-		// bookingState: state.booking
-	}
-}
-const AppConnected = connect(mapStateToProps)(App);
 
-export default AppConnected;
+
+export default App;

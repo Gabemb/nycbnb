@@ -7,7 +7,7 @@ import App from "./components/App"
 
 //import Provider and store
 import {Provider} from 'react-redux';
-import store from './src/store/store'
+import store from './src/store/store.js';
 
 //Components
 import ListingForm from './src/forms/makeListing'

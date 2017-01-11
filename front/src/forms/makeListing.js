@@ -9,7 +9,7 @@ class ListingForm extends Component {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="description">Description</label>
-          <Field name="Description" component="input" type="text"/>
+          <Field name="Description" component="input" type="textarea"/>
         </div>
       
         <div>

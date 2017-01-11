@@ -8,7 +8,7 @@ describe('User tests:', () => {
  var users = [
     {firstName: 'craig',lastName: 'Maya', email: 'craig@gmail.com',password: 'pass1'},
     {firstName: 'james',lastName: 'Wall' ,email: 'james@gmail.com',password: 'pass2'},
-    {firstName: 'william',lastName: 'Jin', email: 'william@gmail.com',password: 'pass3'},
+    {firstName: 'william',lastName: 'Jin', email: 'william@gmail.com',password: 'pass3'}
   ];
 
 
@@ -25,6 +25,7 @@ describe('User tests:', () => {
     supertest(server)
       .get('/api/users')
       .end((err, res) => {
+
       	expect(res.body.length).equal(3)
         expect(res.body[0].firstName).equal(users[0].firstName);
         expect(res.body[1].firstName).equal(users[1].firstName);

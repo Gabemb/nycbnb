@@ -1,11 +1,12 @@
  import React from 'react';
- import {connect} from 'react-redux';
+ import {Link} from 'react-router';
 
 const App = (props) => {
-	console.log("PROPS ==>", props)
 	return (
 	<div>
 		<h1>Hello World (from App.jsx)</h1>
+		<Link to={'/listing/' + 1}><button>To Listing!</button></Link>
+		{props.children}
 	</div>
 )}
 

@@ -1,21 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, Link, browserHistory} from 'react-router'
+import '../App.css';
 
 
 var App = React.createClass({
 	render: function(){
 		return(
-			<div>HELLO MICHAEL</div>
+			<div>
+				<div className='logo-div'>
+					<img className='logo' src={require('../images/nycbnb_logo.png')} />
+				</div>
+			</div>
 		)
 	}
 })
 
-ReactDOM.render(
-	<Router history={browserHistory}>
-		<Route path='/' component={App}>
-		<IndexRoute component = {Home} />
-		</Route>
-	</Router>,
-	document.getElementById('root')
-);
+export default App;

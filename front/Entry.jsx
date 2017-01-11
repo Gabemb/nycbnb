@@ -13,7 +13,6 @@ render(
 		<Router history={browserHistory}>
 			<Route path='/'>
 				<IndexRoute component={App}/>
-				<Route path="ListingForm" component={ListingForm} />. 
 			</Route>
 		</Router>,
 	document.getElementById('root')

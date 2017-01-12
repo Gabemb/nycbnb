@@ -37,58 +37,70 @@ var CreateListing=React.createClass({
 			<h2 className="heading">Become a host!</h2>
 
 			<form onSubmit={this.postListing}>
+				
+				<h3>Describe your home:</h3>
 				<input 
 				className="input"
 				type="textarea"
 				placeholder="Please describe your home."
 				onChange={this.handleChange.bind(this, "description")}
 				/>
-				
-			  <datalist id="boroughs">
-			    <option value="Bronx">
-			    <option value="Brooklyn">
-			    <option value="Manhattan">
-			    <option value="Queens">
-			    <option value="Staten Island">
-			  </datalist>
+				<br /><br />
 
-				
+				<h3>What borough is your listing in?</h3>
+				<select name="borough" onChange={this.handleChange.bind(this, "borough")}>
+				    <option value="bronx">Bronx</option>
+				    <option value="brooklyn">Brooklyn</option>
+				    <option value="manhattan">Manhattan</option>
+				    <option value="queens">Queens</option>
+				    <option value="statenisland">Staten Island</option>
+  				</select>
+				<br /><br />
+
+				<h3>Price Per Night:</h3>
 				<input 
 				className="input"
-				type="textarea"
-				placeholder="Please describe your home."
-				onChange={this.handleChange.bind(this, "description")}
+				type="text"
+				placeholder="Price"
+				onChange={this.handleChange.bind(this, "price")}
 				/>
-				
+				<br /><br />
+
+				<h3>What is the guest limit for your listing?</h3>
 				<input 
 				className="input"
-				type="textarea"
-				placeholder="Please describe your home."
-				onChange={this.handleChange.bind(this, "description")}
+				type="text"
+				placeholder="Guest guestLimit"
+				onChange={this.handleChange.bind(this, "guestLimit")}
 				/>
+				<br /><br />
 				
+				<h3>Is your listing available now? Check for 'yes':</h3>
 				<input 
 				className="input"
-				type="textarea"
-				placeholder="Please describe your home."
-				onChange={this.handleChange.bind(this, "description")}
+				type="checkbox"
+				onChange={this.handleChange.bind(this, "availability")}
 				/>
+				<br /><br />
 				
+				<h3>Please upload images for your listing:</h3>
 				<input 
-				className="input"
-				type="textarea"
-				placeholder="Please describe your home."
-				onChange={this.handleChange.bind(this, "description")}
+				className="upload"
+				type="file"
+				name="pic"
+				accept="image/*"
+				onChange={this.handleChange.bind(this, "images")}
 				/>
+				<br /><br />
 				
-				<input 
-				className="input"
-				type="textarea"
-				placeholder="Please describe your home."
-				onChange={this.handleChange.bind(this, "description")}
-				/>
+				<button 
+				className="button"
+				type="submit"
+				>Submit</button>
 			</form>
 			</div>
 		)
 	}
 })
+
+export default CreateListing;

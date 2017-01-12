@@ -5,17 +5,20 @@ import Login from './src/components/Login'
 
 
 // import app
-import App from './src/components/App'
-import Listing from './src/components/Listing/Listing.jsx'
+import App from "./src/components/App"
+import Home from './src/components/Home'
+
 
 //Components
-//import ListingForm from './src/forms/'
+import CreateListing from './src/components/CreateListing';
+import Listing from './src/components/Listing/Listing.jsx'
 
 
 render(
 		<Router history={browserHistory}>
-			<Route path='/'>
-				<IndexRoute component={App}/>
+			<Route path='/' component={App}>
+				<IndexRoute component={Home}/>
+				<Route path='Createlisting' component={CreateListing} />
 				<Route path='/listing/:listingId' component={Listing} />
 				<Route path="/login" component={Login} />
 			</Route>

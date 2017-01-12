@@ -12,6 +12,11 @@ module.exports = function(sequelize,
       type: DataTypes.STRING,
       isDate: true,
       allowNull: false
+    },
+    guests: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      isInt: true
     }
   }, {
     classMethods: {

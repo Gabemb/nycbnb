@@ -41,15 +41,16 @@ const Listing = React.createClass({
 		//and id of user making listing
 		console.dir(event.target)
 		console.log(event.target.name)
-		//moment("2017-01-07").isBetween("2017-01-04", "2017-01-11")
 		//Loop that (using moment.js's built in isBetween() function) checks 
 		//whether the selected dates have been booked already by another user.
-		let bookedDates = listing.Bookings.map( (booking) => {
-			if (moment(date).isBetween( booking.checkIn, booking.checkOut )) {
-				booked = true;
-				return [booking.checkIn, booking.checkOut];
+		let bookedDates =[]
+		this.state.listing.Bookings.forEach( (booking) => {
+			let checkIn = moment(booking.checkIn).format("YYYY-MM-DD");
+			let checkOut = moment(booking.checkOut).format("YYYY-MM-DD");
+
+			if (moment(date).isBetween( checkIn, checkOut )) {
+				 bookedDates.push(booking.checkIn + " and " + booking.checkOut);
 			}
-			return
 		})
 
 		if (bookedDates.length > 0) {
@@ -58,6 +59,14 @@ const Listing = React.createClass({
 			this.setState({ [action]: date })
 		}
 
+	},
+
+	setGuests(event){
+		console.log(event.target.value);
+	},
+
+	book(event){
+		this.set.State
 	},
 
 	render(){
@@ -76,9 +85,22 @@ const Listing = React.createClass({
 				<div>
 					<img src={listing.images[0]}></img>
 
-					<h4>{listing.price}</h4> <h4>Per Night</h4>
+					<h4>${listing.price}</h4> <h4>Per Night</h4>
 
-					<input onChange={this.setDate} name="checkIn" type="date" /> <input onChange={this.setDate} name="checkOut" type="date" />
+					<form onSubmit={this.book}>
+						<p>Check In:</p>      <p>Check Out:</p>
+					
+						<input onChange={this.setDate} name="checkIn" type="date" /> <input onChange={this.setDate} name="checkOut" type="date" />
+						
+						{this.state.alreadyBooked ? <h2 id="error">Woops, looks like the dates between {this.state.alreadyBooked[0]}</h2> : null}
+
+						<br />
+
+						<p>Guests:</p>
+						<input onChange={this.setGuests} type="number" min="1" max={listing.guestLimit.toString()}></input>
+						<input type="submit" value="Book"></input>
+					</form>
+
 						
 
 					<h1> {listing.User.firstName}'s {randAdj} {randNoun} in {listing.borough}</h1>

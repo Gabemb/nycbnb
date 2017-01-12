@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const User = require('../models/user');
+// const User = require('../models/user');
 
 const Listing = require('../models').Listing;
 const Booking = require('../models').Booking;
+const User = require('../models').User;
 
 
 
@@ -43,17 +44,19 @@ function deleteUser(req, res) {
 	})
 }
 
-// ********** POST new Use **********
+// ********** POST new User **********
 function postNewUser(req, res) {
+	console.log(req.body)
 	User.create({
-		firstName: req.body.name,
-		lastName: req.body.lastname,
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
 		email: req.body.email,
 		password:req.body.password
 
 	})
 	.then(function(newUser) {
 		console.log(newUser)
+
 		res.send(newUser)
 	})
 }

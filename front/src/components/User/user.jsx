@@ -24,7 +24,7 @@ acctSignUp: function(event){
 		event.preventDefault()
 		$.ajax({
 			method: 'POST',
-			url: '/api/sers',
+			url: '/api/users',
 			data: this.state
 		})
 		.done((data) => {

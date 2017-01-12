@@ -92,10 +92,12 @@ h2 {
   padding-bottom: 10px;
 }
 
+/* commenting out width: 100% due to 
+breaking other files */
 input {
   padding: 15px 10px;
-  width: 100%;
-  border: none;
+/*  width: 100%;
+*/  border: none;
   background: #ddd;
   margin-bottom: 10px;
 }

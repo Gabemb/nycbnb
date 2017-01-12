@@ -16,30 +16,26 @@ const AllListings = React.createClass({
 			}
 		})
 		.done( (data) => {
-			console.log('DATA:', data)
-
 			this.setState({places: data})
 		})
 	},
 	render: function(){
-		console.log("STATE =======>", this.state)
 		return(
 			<div>
 				<h2>All Available Listings</h2>
 
-				<ol>
-					{this.state.places.length=== 0 ? "There are no available listings at this time." : this.state.places.map((place, idx)=> {
+				
+					{this.state.places.length=== 0 ? "Loading..." : this.state.places.map((place, idx)=> {
 						return (
 
-							<li key={idx}>
-								<div>
-							  		<img src={place.images[0]} />
-							  		<p>{place.price}</p>
+								<div className="oneListing">
+							  		<img key={idx} className="gridImg" src={place.images[0]} />
+							  		<p className="price"><strong>${place.price}</strong>/per night</p>
 							  	</div>
-							</li>
+							
 						)
 					})}
-				</ol>
+				
 
 			</div>
 		)

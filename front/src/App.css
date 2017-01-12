@@ -56,7 +56,16 @@ a:link {
 	margin-left: auto;
 }
 
+/* LISTINGS DISPLAY (GRID POTENTIALLY) */
 
+.gridImg {
+	height: 250px;
+	width: 350px;
+}
+
+.oneListing {
+	margin-left: 25px;
+}
 
 
 

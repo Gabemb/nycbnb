@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-
 //CSS
 import '../App.css';
 
 //Components
 import SignUpForm from './User/user.jsx'
 import Login from './Login';
+import Home from './Home';
 
 
 const App = React.createClass({

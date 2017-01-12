@@ -26,6 +26,7 @@ const Listing = React.createClass({
 	},
 
 	render(){
+		console.log("PROPS ================>", this.props)
 		console.log("STATE ====>", this.state)
 		if (this.state.listing) {
 			let listing = this.state.listing

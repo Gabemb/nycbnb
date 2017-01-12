@@ -63,7 +63,8 @@ const deleteListing=(req, res)=> {
 const listingByBoro=(req, res)=> {
 	Listing.findAll({
 		where: {
-			borough: req.params.borough
+			borough: req.params.borough,
+			availability: true
 		}
 	})
 	.then((listings)=> {

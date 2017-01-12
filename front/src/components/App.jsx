@@ -1,16 +1,26 @@
- import React from 'react';
- import {connect} from 'react-redux';
- import SignUpForm from './User/user.jsx'
+import React from 'react';
+import {Link} from 'react-router';
+
+//CSS
+import '../App.css';
+
+//Components
+import SignUpForm from './User/user.jsx'
 
 const App = (props) => {
-	console.log("PROPS ==>", props)
 	return (
 	<div>
+    <div className='logo-div'>
+		 
+		  <img className='logo' src={require('../images/nycbnb_logo.png')} />
+	</div>
+		
 	<SignUpForm/>
-		<h1>Hello World </h1>
+	<Link to={'/listing/' + 1}>
+	      <button>To Listing!</button>
+	 </Link>
+		{props.children}
 	</div>
 )}
-
-
 
 export default App;

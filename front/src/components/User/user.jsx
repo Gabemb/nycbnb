@@ -1,6 +1,6 @@
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-
+import React from 'react';
+import $ from 'jquery';
+import {browserHistory} from 'react-router';
 
 
 const SignUpForm = React.createClass({
@@ -31,45 +31,45 @@ acctSignUp: function(event){
 			browserHistory.push('/account')
 		})
 	},
-
-
-
-
-
 render: function () {
   const { handleSubmit, pristine, reset, submitting } = this.props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={this.acctSignUp}>
       <div>
         <label>First Name</label>
         <div>
-          <input name="firstName"  type="text" placeholder="First Name"/>
+
+          <input name="firstName"  type="text" placeholder="First Name"
+           onChange={this.handleChange.bind(this, "firstName")}   />
         </div>
       </div>
 
       <div>
         <label>Last Name</label>
         <div>
-          <input name="lastName"  type="text" placeholder="Last Name"/>
+          <input name="lastName"  type="text" placeholder="Last Name"
+           onChange={this.handleChange.bind(this, "lastName")} />
         </div>
       </div>
 
       <div>
         <label>Email</label>
         <div>
-          <input name="email"  type="email" placeholder="Email"/>
+          <input name="email"  type="email" placeholder="Email"
+           onChange={this.handleChange.bind(this, "email")}   />
         </div>
       </div>
       <div>
 
         <label>Password</label>
         <div>
-          <input name="email"  type="email" placeholder="password"/>
+          <input name="email"  type="email" placeholder="password"
+           onChange={this.handleChange.bind(this, "password")}  />
         </div>
       </div>
 
       <div>
-        <button type="submit" disabled={pristine || submitting}>Join Now</button>
+        <button className="button"type="submit">Join Now</button>
       </div>
     </form>
   )
@@ -77,7 +77,6 @@ render: function () {
 
 })
 
- 
-
  export default SignUpForm;
+
 

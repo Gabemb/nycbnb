@@ -1,5 +1,7 @@
-const listingRouter=require('express').Router();
+ const listingRouter=require('express').Router();
 const Listing=require('../models').Listing;
+const User=require('../models').User;
+
 
 const allListings=(req, res) => {
 	Listing.findAll()
@@ -10,7 +12,14 @@ const allListings=(req, res) => {
 }
 
 const createListing=(req, res) => {
-	Listing.create(req.body)
+	Listing.create({
+		description: req.body.description,
+		price: req.body.price,
+		guestLimit: req.body.guestLimit,
+		borough: req.body.borough,
+		availability: req.body.availability,
+		images: req.body.images
+	})
 	.then((listing)=> {
 		res.send(listing)
 	})
@@ -18,7 +27,9 @@ const createListing=(req, res) => {
 }
 
 const getOneListing=(req, res) => {
-	Listing.findById(req.params.id)
+	Listing.findById(req.params.id, 
+		{ include: [ User ]
+	})
 	.then((listing)=> {
 		res.send(listing)
 	})

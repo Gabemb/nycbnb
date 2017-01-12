@@ -12,9 +12,10 @@ const Login = React.createClass({
 		submitLoginInfo() {
 		$.ajax({
             type: "POST",
-            url: '//localhost:3000/login',
+            url: '/login',
             data: this.state
             })
+
         .done(function(data) {
         	console.log(data)
         })
@@ -22,12 +23,12 @@ const Login = React.createClass({
 	},
 
 	updateEmail(event) {
-		console.log(event.target.value)
+
 		this.setState({email: event.target.value})
 	},
 
 	updatePassword(event) {
-		console.log(event.target.value)
+
 		this.setState({password: event.target.value})
 	},
 

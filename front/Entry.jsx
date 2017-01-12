@@ -4,14 +4,16 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import Login from './src/components/Login'
 
 
-// import app
-import App from "./src/components/App"
+//App
 import Home from './src/components/Home'
+import App from './src/components/App'
 
 
 //Components
 import CreateListing from './src/components/CreateListing';
 import Listing from './src/components/Listing/Listing.jsx'
+import SignUpForm from './src/components/User/user.jsx'
+
 
 render(
 		<Router history={browserHistory}>
@@ -20,8 +22,8 @@ render(
 				<Route path='Createlisting' component={CreateListing} />
 				<Route path='/listing/:listingId' component={Listing} />
 				<Route path="/login" component={Login} />
+				<Route path="SignUpForm" component={SignUpForm} />
 			</Route>
 		</Router>,
 	document.getElementById('root')
 )
-//<Route path="ListingForm" component={ListingForm} />. 

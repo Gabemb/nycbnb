@@ -1,8 +1,15 @@
 import React from 'react';
-import '../App.css';
 import {Link} from 'react-router';
 
-var App = React.createClass({
+
+//CSS
+import '../App.css';
+
+//Components
+import SignUpForm from './User/user.jsx'
+
+
+const App = React.createClass({
 	render: function(){
 		return(
 			<div>
@@ -10,14 +17,14 @@ var App = React.createClass({
 			<img className='logo' src={require('../images/nycbnb_logo.png')} />
 			
 			
-	          <Link className ="signlogin" to='#'>Sign Up</Link>
+	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>
 	          <Link className ="signlogin" to='#'>Log In</Link>
 	          <Link to={'/listing/' + 1}><button>To Listing!</button></Link>
 
 			<nav className="navbar navbar-inverse">
 
 			<div className="mobilesignin">
-			  <Link to='#'>Sign Up</Link>
+			  <Link to='SignUpForm'>Sign Up</Link>
 	          <Link to='#'>Log In</Link>
 			</div>
 
@@ -31,5 +38,6 @@ var App = React.createClass({
 		)
 	}
 })
+
 
 export default App;

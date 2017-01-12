@@ -7,6 +7,7 @@ import '../App.css';
 
 //Components
 import SignUpForm from './User/user.jsx'
+import Login from './Login';
 
 
 const App = React.createClass({
@@ -18,7 +19,7 @@ const App = React.createClass({
 			
 			
 	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>
-	          <Link className ="signlogin" to='#'>Log In</Link>
+	          <Link className ="signlogin" to='Login'>Log In</Link>
 
 
 	        <br />

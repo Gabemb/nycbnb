@@ -95,16 +95,4 @@ render: function () {
 
  export default SignUpForm;
 
-      // </div>
-      // </div>
-      // </div>
-
-      // <div>
-      //   <label>Last Name</label>
-
-
-      // <div>
-      //   <label>Email</label>
-
-      //   <label>Password</label>
-      //   <div>
+    

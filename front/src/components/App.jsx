@@ -14,12 +14,14 @@ const App = React.createClass({
 		return(
 			<div>
 			
-			<img className='logo' src={require('../images/nycbnb_logo.png')} />
+			<img className='logo' src={require('../images/nycbnb_logo.png')} 
+
+              
+			/>
 			
 			
 	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>
 	          <Link className ="signlogin" to='#'>Log In</Link>
-
 
 	        <br />
 
@@ -32,3 +34,4 @@ const App = React.createClass({
 
 
 export default App;
+			

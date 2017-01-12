@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import {browserHistory} from 'react-router';
+// import './App.css';
 
 
 const SignUpForm = React.createClass({
@@ -31,46 +32,61 @@ acctSignUp: function(event){
 			browserHistory.push('/account')
 		})
 	},
+
+	 onSubmit(e) {
+    if(this.state.firstName === '' || this.state.email === '' || this.state.password === '' || this.state.lastName === '') {
+        this.setState({
+          errorMessage: 'Please fill out all required fields.'
+        });
+      } else {
+        if(this.state.error > -1 ) {
+          console.log(this.state.error);
+          this.setState({
+            errorMessage: 'Please fixed all the errors in fields'
+          });
+        }  else {
+          this.setState({ 
+            errorMessage: 'You Successfully created an account!'
+          });
+        }
+      }
+   },
+
 render: function () {
   const { handleSubmit, pristine, reset, submitting } = this.props
   return (
     <form onSubmit={this.acctSignUp}>
-      <div>
-        <label>First Name</label>
-        <div>
+      <div >
 
+   
+<div className="container">
+        
+         {this.state.errorMessage}
+          <div>
+                <h2>SIGN UP</h2>
           <input name="firstName"  type="text" placeholder="First Name"
            onChange={this.handleChange.bind(this, "firstName")}   />
-        </div>
-      </div>
 
-      <div>
-        <label>Last Name</label>
-        <div>
+
           <input name="lastName"  type="text" placeholder="Last Name"
            onChange={this.handleChange.bind(this, "lastName")} />
-        </div>
-      </div>
 
-      <div>
-        <label>Email</label>
-        <div>
           <input name="email"  type="email" placeholder="Email"
            onChange={this.handleChange.bind(this, "email")}   />
-        </div>
-      </div>
-      <div>
 
-        <label>Password</label>
-        <div>
           <input name="email"  type="email" placeholder="password"
            onChange={this.handleChange.bind(this, "password")}  />
+        <div>
+        <button className="button"type="submit">Join Now</button>
+        </div>
+           
         </div>
       </div>
 
-      <div>
-        <button className="button"type="submit">Join Now</button>
-      </div>
+        
+        </div>
+
+
     </form>
   )
 }
@@ -79,4 +95,16 @@ render: function () {
 
  export default SignUpForm;
 
+      // </div>
+      // </div>
+      // </div>
 
+      // <div>
+      //   <label>Last Name</label>
+
+
+      // <div>
+      //   <label>Email</label>
+
+      //   <label>Password</label>
+      //   <div>

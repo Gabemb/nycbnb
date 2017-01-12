@@ -3,30 +3,18 @@ const User = require("../models").User
 
 
 function userLogin(req,res){
-	 console.log('Session:', req.session);
+  //  console.log("query:", req.query);
+  //  console.log("body:", req.body);
+	 // console.log('Session:', req.session);
   var userInfo = req.body;
   User.sync()
-  //Does user exists?
   .then(() => {
     return User.findOne({
       where: {
-        email: userInfo.email
+        email: userInfo.email,
+        password: userInfo.password
       }
     })
-  })
-  .then((user) => {
-    //IF user exists, check if password is correct
-    console.log(user)
-    // if(user && user.password === userInfo.password) {
-    //   console.log('Password is correct!')
-    //   return user;
-    // //ELSE IF user does not exist, create new user
-    // } else if(!user) {
-    //   console.log('Creating new user!');
-    //   return User.create(userInfo);
-    // } else {
-    //   return null;
-    // }
   })
   .then((user) => {
     if(user) {

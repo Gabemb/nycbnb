@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const User = require('../models/user');
 
+const Listing = require('../models').Listing;
+const Booking = require('../models').Booking;
+
 
 
 
@@ -19,7 +22,9 @@ function getAllUsers(req, res) {
 
 // ********** GET an user by id **********
 function getUserById(req, res) {
-	User.findById(req.params.id)
+	User.findById(req.params.id, {
+		include: [Listing, Booking]
+	})
 		.then(function(user) {
 			res.send(user)
 		})
@@ -57,7 +62,7 @@ router.route('/')
 	.get(getAllUsers)
 	.post(postNewUser)
 
-router.route('/username/:firstName')
+router.route('/userId/:id')
 	.get(getUserById)
 	.delete(deleteUser)
 

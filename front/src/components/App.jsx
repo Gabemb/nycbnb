@@ -23,10 +23,6 @@ const App = React.createClass({
 	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>
 	          <Link className ="signlogin" to='#'>Log In</Link>
 
-			
-
-
-
 	        <br />
 
 			{this.props.children}

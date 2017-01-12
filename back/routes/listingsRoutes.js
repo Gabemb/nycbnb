@@ -1,6 +1,7 @@
  const listingRouter=require('express').Router();
 const Listing=require('../models').Listing;
 const User=require('../models').User;
+const Booking=require('../models').Booking;
 
 
 const allListings=(req, res) => {
@@ -28,7 +29,7 @@ const createListing=(req, res) => {
 
 const getOneListing=(req, res) => {
 	Listing.findById(req.params.id, 
-		{ include: [ User ]
+		{ include: [ User, Booking ]
 	})
 	.then((listing)=> {
 		res.send(listing)
@@ -62,7 +63,8 @@ const deleteListing=(req, res)=> {
 const listingByBoro=(req, res)=> {
 	Listing.findAll({
 		where: {
-			borough: req.params.borough
+			borough: req.params.borough,
+			availability: true
 		}
 	})
 	.then((listings)=> {

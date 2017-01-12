@@ -14,21 +14,18 @@ const App = React.createClass({
 		return(
 			<div>
 			
-			<img className='logo' src={require('../images/nycbnb_logo.png')} />
+			<img className='logo' src={require('../images/nycbnb_logo.png')} 
+
+              
+			/>
 			
 			
 	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>
 	          <Link className ="signlogin" to='#'>Log In</Link>
-	          <Link to={'/listing/' + 1}><button>To Listing!</button></Link>
 
-			<nav className="navbar navbar-inverse">
+			
 
-			<div className="mobilesignin">
-			  <Link to='SignUpForm'>Sign Up</Link>
-	          <Link to='#'>Log In</Link>
-			</div>
 
-	        </nav>
 
 	        <br />
 
@@ -41,3 +38,4 @@ const App = React.createClass({
 
 
 export default App;
+			

@@ -45,15 +45,16 @@ function deleteUser(req, res) {
 
 // ********** POST new Use **********
 function postNewUser(req, res) {
-	Users.create({
+	User.create({
 		firstName: req.body.name,
-		lastname: req.body.lastname,
+		lastName: req.body.lastname,
 		email: req.body.email,
 		password:req.body.password
 
 	})
-	.then(function(Users) {
-		res.send('ahh shit, you/ve added a new USER')
+	.then(function(newUser) {
+		console.log(newUser)
+		res.send(newUser)
 	})
 }
 

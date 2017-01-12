@@ -26842,7 +26842,9 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement('img', { className: 'logo', src: __webpack_require__(242) }),
+				_react2.default.createElement('img', { className: 'logo', src: __webpack_require__(242)
+	
+				}),
 				_react2.default.createElement(
 					_reactRouter.Link,
 					{ className: 'signlogin', to: 'SignUpForm' },
@@ -26852,33 +26854,6 @@
 					_reactRouter.Link,
 					{ className: 'signlogin', to: '#' },
 					'Log In'
-				),
-				_react2.default.createElement(
-					_reactRouter.Link,
-					{ to: '/listing/' + 1 },
-					_react2.default.createElement(
-						'button',
-						null,
-						'To Listing!'
-					)
-				),
-				_react2.default.createElement(
-					'nav',
-					{ className: 'navbar navbar-inverse' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'mobilesignin' },
-						_react2.default.createElement(
-							_reactRouter.Link,
-							{ to: 'SignUpForm' },
-							'Sign Up'
-						),
-						_react2.default.createElement(
-							_reactRouter.Link,
-							{ to: '#' },
-							'Log In'
-						)
-					)
 				),
 				_react2.default.createElement('br', null),
 				this.props.children
@@ -26936,7 +26911,7 @@
 	    event.preventDefault();
 	    _jquery2.default.ajax({
 	      method: 'POST',
-	      url: '/api/users',
+	      url: '/api/sers',
 	      data: this.state
 	    }).done(function (data) {
 	      console.log("Received User Data", data);
@@ -27015,20 +26990,6 @@
 	});
 	
 	exports.default = SignUpForm;
-	
-	// </div>
-	// </div>
-	// </div>
-	
-	// <div>
-	//   <label>Last Name</label>
-	
-	
-	// <div>
-	//   <label>Email</label>
-	
-	//   <label>Password</label>
-	//   <div>
 
 /***/ },
 /* 241 */

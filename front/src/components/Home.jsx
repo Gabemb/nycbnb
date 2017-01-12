@@ -10,11 +10,11 @@ var Home = React.createClass({
 				<center>
 				<h2>Experience New York City like a local.</h2>
 				<br />
-				<img className="brooklyn" src={require('../images/brooklyn.jpg')} />
-				<img className="brooklyn" src={require('../images/brooklyn.jpg')} />
-				<img className="brooklyn" src={require('../images/brooklyn.jpg')} />				
-				<img className="brooklyn" src={require('../images/brooklyn.jpg')} />
-				<img className="brooklyn" src={require('../images/brooklyn.jpg')} />	
+				<img className="poster" src={require('../images/brooklyn.jpg')} />
+				<img className="poster" src={require('../images/bronx.jpg')} />
+				<img className="poster" src={require('../images/manhattan.jpg')} />				
+				<img className="poster" src={require('../images/queens.jpg')} />
+				<img className="poster" src={require('../images/staten.jpg')} />	
 				</center>			
 
 				</div>

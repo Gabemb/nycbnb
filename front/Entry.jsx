@@ -13,7 +13,6 @@ import Home from './src/components/Home'
 import CreateListing from './src/components/CreateListing';
 import Listing from './src/components/Listing/Listing.jsx'
 
-
 render(
 		<Router history={browserHistory}>
 			<Route path='/' component={App}>

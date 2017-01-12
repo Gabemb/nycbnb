@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       len: [200, 2000]
     },
     images: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false
     },
     guestLimit: {

@@ -1,3 +1,57 @@
 .logo {
 	height: 100px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+/*.nav {
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+*/
+
+.mobilesignin {
+	width: auto;
+	height: 50px;
+	border: 1px solid red;
+	display: none;
+}
+
+@media only screen and (max-width: 500px) {
+	.logo {
+		flex-direction: column;
+	}
+	.signlogin {
+		float: right;
+		display: block;
+		flex-direction: column;
+		display: none;
+	}
+
+	.mobilesignin {
+		width: auto;
+		height: 50px;
+		display: initial;
+		border: 1px solid white;
+		float: right;
+		display: block;
+		margin-bottom: 50px;
+	}
+
+}
+
+a:link {
+	float: right;
+	margin-left: 15px;
+	margin-right: 25px;
+	text-decoration: none;
+	color: black;
+	margin-top: 65px;
+}
+
+.brooklyn {
+	width: 20%;
+	margin-right:auto;
+	margin-left: auto;
 }

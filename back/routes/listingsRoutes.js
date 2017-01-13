@@ -13,15 +13,9 @@ const allListings=(req, res) => {
 }
 
 const createListing=(req, res) => {
-	Listing.create({
-		description: req.body.description,
-		price: req.body.price,
-		guestLimit: req.body.guestLimit,
-		borough: req.body.borough,
-		availability: req.body.availability,
-		images: req.body.images
-	})
+	Listing.create(req.body)
 	.then((listing)=> {
+		console.log(listing)
 		res.send(listing)
 	})
 	.catch((err)=> console.log(err))

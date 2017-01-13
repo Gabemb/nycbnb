@@ -12,7 +12,7 @@ User.sync({force: true})
   {firstName: 'Salina', lastName:'Fu', email:'salinafu@gmail.com', password:'Gabesux'},
   {firstName: 'Michael', lastName:'Dinnall', email:'hoorah@gmail.com', password:'Gabesux'},
   {firstName: 'Gabriel', lastName:'Bollogni', email:'nope@gmail.com', password:'Gabesux'},
-  {firstName: 'Max', lastName: 'Waters', email: max@gmail.com, password: 'password'},
+  {firstName: 'Max', lastName: 'Waters', email: 'max@gmail.com', password: 'password'},
   {firstName: 'Oliver', lastName: 'Michaels', email: 'ollie@aol.com', password: 'password'},
   {firstName: 'Emily', lastName: 'Blunt', email: 'Blunt@gmail.com', password: 'password'},
   {firstName: 'Annie', lastName: 'Smith', email: 'asmith@gmail.com', password: 'password'},

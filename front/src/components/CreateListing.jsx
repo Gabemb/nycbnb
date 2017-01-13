@@ -8,8 +8,7 @@ var CreateListing=React.createClass({
 	},
 	postListing: function(event){
 		event.preventDefault()
-		// axios.post('/api/listing', {
-		// })
+		console.log(this.state)
 		$.ajax({
 			url: '/api/listing',
 			method: 'POST',
@@ -17,6 +16,7 @@ var CreateListing=React.createClass({
 		})
 	},
 	handleChange: function(input, event){
+		console.log(input)
 		if(input === "description"){
 			this.setState({description: event.target.value})
 		} else if (input==="price"){
@@ -28,7 +28,10 @@ var CreateListing=React.createClass({
 		} else if (input === "availability"){
 			this.setState({availability: event.target.value})
 		} else if (input === "images"){
-			this.setState({images: event.target.value})
+			var images = this.state.images.slice()
+			images.push(event.target.value)
+
+			this.setState({images: images})
 		}
 	},
 	render: function(){
@@ -48,18 +51,21 @@ var CreateListing=React.createClass({
 				<br /><br />
 
 				<h3>What borough is your listing in?</h3>
-				<select className="borough" onChange={this.handleChange.bind(this, "borough")}>
-				    <option value="bronx">Bronx</option>
-				    <option value="brooklyn">Brooklyn</option>
-				    <option value="manhattan">Manhattan</option>
-				    <option value="queens">Queens</option>
-				    <option value="statenisland">Staten Island</option>
+				
+				<select class="styled-select slate" onChange={this.handleChange.bind(this, "borough")}>
+				    <option value="Bronx">Bronx</option>
+				    <option value="Brooklyn">Brooklyn</option>
+				    <option value="Manhattan">Manhattan</option>
+				    <option value="Queens">Queens</option>
+				    <option value="Staten Island">Staten Island</option>
   				</select>
+  				
+
 				<br /><br />
 
 				<h3>Price Per Night:</h3>
 				<input 
-				className="input"
+				className="input-price"
 				type="text"
 				placeholder="Price"
 				onChange={this.handleChange.bind(this, "price")}
@@ -85,10 +91,8 @@ var CreateListing=React.createClass({
 				
 				<h3>Please upload images for your listing:</h3>
 				<input 
-				className="upload"
-				type="file"
-				name="pic"
-				accept="image/*"
+				className="input"
+				type="text"
 				onChange={this.handleChange.bind(this, "images")}
 				/>
 				<br /><br />

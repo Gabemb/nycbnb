@@ -11,7 +11,7 @@ import noun from "./noun.js";
 const Listing = React.createClass({
 	getInitialState(){
 		//remember to change userId so it's not hard coded anymore
-		return {listing: null, checkIn: "", checkOut: "", userId: 6, alreadyBooked: null}
+		return {listing: null, checkIn: "", checkOut: "", guests: 0, userId: 6, alreadyBooked: null}
 	},
 
 	componentDidMount(){
@@ -36,49 +36,89 @@ const Listing = React.createClass({
 	setDate(event){
 		let date = event.target.value;
 		let action = event.target.name;
-		let booked = false;
-		//dont forget id of listing
-		//and id of user making listing
-		console.dir(event.target)
-		console.log(event.target.name)
-		//moment("2017-01-07").isBetween("2017-01-04", "2017-01-11")
 		//Loop that (using moment.js's built in isBetween() function) checks 
 		//whether the selected dates have been booked already by another user.
-		let bookedDates = listing.Bookings.map( (booking) => {
-			if (moment(date).isBetween( booking.checkIn, booking.checkOut )) {
-				booked = true;
-				return [booking.checkIn, booking.checkOut];
+		let bookedDates =[];
+		this.state.listing.Bookings.forEach( (booking) => {
+			let checkIn = moment(booking.checkIn).format("YYYY-MM-DD");
+			let checkOut = moment(booking.checkOut).format("YYYY-MM-DD");
+
+			if (moment(date).isBetween( checkIn, checkOut )) {
+				 bookedDates.push(booking.checkIn + " and " + booking.checkOut);
 			}
-			return
-		})
+		});
 
 		if (bookedDates.length > 0) {
 			this.setState({ alreadyBooked: bookedDates });
 		} else {
-			this.setState({ [action]: date })
-		}
+			this.setState({ [action]: date });
+		};
 
+	},
+
+	setGuests(event){
+		let guests = event.target.value;
+		this.setState({guests: guests});
+	},
+
+	book(event){
+		//Booking the user's stay
+		event.preventDefault()
+		axios.post('/api/booking', {
+			checkIn: this.state.checkIn,
+			checkOut: this.state.checkOut,
+			guests: this.state.guests,
+			UserId: this.state.userId,
+			ListingId: this.state.listing.id
+		})
+		.then( (res) => {
+			console.log(res);
+			this.props.router.push('/')
+		})
+		.catch( (err) => {
+			console.log(err);
+		});
 	},
 
 	render(){
 		console.log("PROPS ================>", this.props)
 		console.log("STATE ====>", this.state)
+		//If statement that's just waiting for our initial GET request to return something
+		//renders a empty div if our state never gets populated.
 		if (this.state.listing) {
 			let listing = this.state.listing
+			//I am importing an array of adjectives and nouns and then randomly choosing one each time the page loads
+			//Primarily for humor. Not something we would actually want in a final product.
+			//Would eventually allow users to choose their own descriptors while they're initially creating their listings.
 			let randAdj = adj.adjective[Math.round(Math.random() * ((adj.adjective.length - 1) - 0) + 0)];
 			let randNoun = noun.noun[Math.round(Math.random() * ((noun.noun.length - 1) - 0) + 0)];
 			console.log(adj.adjective, noun.noun)
 
-			//let user = this.state.listing.User
-			//let divStyle = {backgroundImage: "url(" +  listing.images[0] + ")"}
 			
 			return (
 				<div>
 					<img src={listing.images[0]}></img>
 
-					<h4>{listing.price}</h4> <h4>Per Night</h4>
+					<h4>${listing.price}</h4> <h4>Per Night</h4>
 
-					<input onChange={this.setDate} name="checkIn" type="date" /> <input onChange={this.setDate} name="checkOut" type="date" />
+					<form onSubmit={this.book}>
+						<p>Check In:</p>      <p>Check Out:</p>
+					
+						<input onChange={this.setDate} name="checkIn" type="date" /> <input onChange={this.setDate} name="checkOut" type="date" />
+						
+						{
+							//Error message that appears if the user tries to book a stay during dates that gave already been taken.
+							this.state.alreadyBooked ? <h2 id="error">Woops, looks like the dates between {this.state.alreadyBooked[0]} have already been booked!</h2> : null
+
+						}
+
+						<br />
+
+						<p>Guests:</p>
+						<input onChange={this.setGuests} type="number" min="1" max={listing.guestLimit.toString()}></input>
+						<input type="submit" value="Book"></input>
+					</form>
+
 						
 
 					<h1> {listing.User.firstName}'s {randAdj} {randNoun} in {listing.borough}</h1>
@@ -100,6 +140,5 @@ const Listing = React.createClass({
 		}
 	}
 });
-					//<div style={divStyle}></div>
 
 export default Listing;

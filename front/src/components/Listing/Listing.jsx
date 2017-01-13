@@ -65,8 +65,8 @@ const Listing = React.createClass({
 	book(event){
 		//Booking the user's stay
 		if(!this.state.loggedIn) {
-			alert("You need an account to book a stay. Please, log in or sign up!")
-			this.state.props.router.push('/login')
+			alert("You need an account to book a stay. Please, log in or sign up!");
+			this.state.props.router.push('/login');
 		}
 		event.preventDefault();
 		axios.post('/api/booking', {
@@ -76,7 +76,7 @@ const Listing = React.createClass({
 			ListingId: this.state.listing.id
 		})
 		.then( (res) => {
-			this.props.router.push('/')
+			this.props.router.push('/');
 		})
 		.catch( (err) => {
 			console.log(err);

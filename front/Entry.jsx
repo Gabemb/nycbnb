@@ -25,7 +25,7 @@ render(
         <Route path='/listing/:listingId' component={Listing} />
 				<Route path="/login" component={Login} />
 				<Route path="/signUpForm" component={SignUpForm} />
-				<Route path="Account" component={Account} />
+				<Route path="/account" component={Account} />
 			</Route>
 		</Router>,
 	document.getElementById('root')

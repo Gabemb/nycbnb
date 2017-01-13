@@ -16,8 +16,9 @@ const Login = React.createClass({
             data: this.state
             })
 
-        .done(function(data) {
+        .done( (data) => {
         	console.log(data)
+        	this.props.router.push('/');
         })
 
 	},

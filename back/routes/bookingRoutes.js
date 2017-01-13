@@ -8,7 +8,15 @@ const Listing = require('../models').Listing;
 
 // ********** POST new Booking **********
 const createNewBooking = (req, res) => {
-	Booking.create(req.body)
+
+	if (!req.session.UserId) return res.sendStatus(401);
+	Booking.create({ 
+		checkIn: req.body.checkIn,
+		checkOut: req.body.checkOut,
+		guests: req.body.guests, 
+		UserId: req.session.UserId,
+		ListingId: req.body.ListingId
+	})
 	.then( (newBooking) => {
 		res.send(newBooking);
 	})

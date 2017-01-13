@@ -11,7 +11,16 @@ User.sync({force: true})
   {firstName: 'Barack', lastName:'Obama', email:'hope@columbia.edu', password:'Fuck Trump'},
   {firstName: 'Salina', lastName:'Fu', email:'salinafu@gmail.com', password:'Gabesux'},
   {firstName: 'Michael', lastName:'Dinnall', email:'hoorah@gmail.com', password:'Gabesux'},
-  {firstName: 'Gabriel', lastName:'Bollogni', email:'nope@gmail.com', password:'Gabesux'}
+  {firstName: 'Gabriel', lastName:'Bollogni', email:'nope@gmail.com', password:'Gabesux'},
+  {firstName: 'Max', lastName: 'Waters', email: 'max@gmail.com', password: 'password'},
+  {firstName: 'Oliver', lastName: 'Michaels', email: 'ollie@aol.com', password: 'password'},
+  {firstName: 'Emily', lastName: 'Blunt', email: 'Blunt@gmail.com', password: 'password'},
+  {firstName: 'Annie', lastName: 'Smith', email: 'asmith@gmail.com', password: 'password'},
+  {firstName: 'Louise', lastName: 'Parker', email: 'parker@harvard.edu', password: 'password'},
+  {firstName: 'Harrison', lastName: 'Ford', email: 'indianajones@gmail.com', password: 'password'},
+  {firstName: 'Derrick', lastName: 'Favors', email: 'favors@nba.com', password: 'password'},
+  {firstName: 'Kevin', lastName: 'Durant', email: 'durant@nba.com', password: 'password'},
+  {firstName: 'Kara', lastName: 'Lopez', email: 'kara@gmail.com', password: 'password'}
 ]))
 //the following users should NOT be added to your database:
 //(if your validations are setup correctly)

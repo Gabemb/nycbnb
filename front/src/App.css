@@ -24,8 +24,9 @@
 	width: 350px;
 }
 
-.oneListing {
+.oneList {
 	margin-left: 25px;
+  float: left;
 }
 
 /* */

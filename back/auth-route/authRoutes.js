@@ -3,11 +3,11 @@ const router = require("express").Router();
 
 
 function auth  (req,res){
-	console.log('session', req.session);
-	 if(req.session.username) {
-    res.send(req.session.username);
+	 if(req.session.UserId) {
+    //res.send(req.session.UserId);
+    res.sendStatus(200);
   } else {
-    res.send(null);
+    res.sendStatus(401);
   }
 
 }

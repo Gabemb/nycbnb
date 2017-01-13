@@ -11,7 +11,7 @@ import App from './src/components/App';
 import CreateListing from './src/components/CreateListing';
 import Listing from './src/components/Listing/Listing.jsx';
 import AllListings from './src/components/Listing/ShowAll';
-import Login from './src/components/Login'
+import Login from './src/components/Login';
 import SignUpForm from './src/components/User/user.jsx';
 import Account from './src/components/User/accountInfo.jsx';
 
@@ -25,7 +25,7 @@ render(
         <Route path='/listing/:listingId' component={Listing} />
 				<Route path="/login" component={Login} />
 				<Route path="/signUpForm" component={SignUpForm} />
-				<Route path="Account" component={Account} />
+				<Route path="/account" component={Account} />
 			</Route>
 		</Router>,
 	document.getElementById('root')

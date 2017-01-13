@@ -19,11 +19,11 @@ const App = React.createClass({
 			
 			<Link to='/'><img className='logo' src={require('../images/nycbnb_logo.png')} /></Link>
 			
-			  <Link className= "NavLink" to="createListing">Become a Host</Link>
+			  <Link className= "NavLink" to="/createlisting">Become a Host</Link>
 
-	          <Link className ="NavLink" to='SignUpForm'>Sign Up</Link>
+	          <Link className ="NavLink" to='/signUpForm'>Sign Up</Link>
 	          
-	          <Link className ="NavLink" to='Login'>Log In</Link>
+	          <Link className ="NavLink" to='/login'>Log In</Link>
 
 
 

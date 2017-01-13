@@ -11,7 +11,7 @@ import noun from "./noun.js";
 const Listing = React.createClass({
 	getInitialState(){
 		//remember to change userId so it's not hard coded anymore
-		return {listing: null, checkIn: "", checkOut: "", guests: 0, userId: 6, alreadyBooked: null}
+		return {listing: null, checkIn: "", checkOut: "", guests: 0, alreadyBooked: null, loggedIn: false}
 	},
 
 	componentDidMount(){
@@ -27,6 +27,7 @@ const Listing = React.createClass({
 		axios.get("/auth")
 			.then( (res) => {
 				console.log("AUTH RESPONSE ====>", res);
+				this.setState({loggedIn: true})
 			})
 			.catch( (err) => {
 				console.log("Error authorizing user", err);
@@ -63,16 +64,19 @@ const Listing = React.createClass({
 
 	book(event){
 		//Booking the user's stay
+		if(!this.state.loggedIn) {
+			alert("You need an account to book a stay. Please, log in or sign up!");
+			this.state.props.router.push('/login');
+		}
 		event.preventDefault();
 		axios.post('/api/booking', {
 			checkIn: this.state.checkIn,
 			checkOut: this.state.checkOut,
 			guests: this.state.guests,
-			UserId: this.state.userId,
 			ListingId: this.state.listing.id
 		})
 		.then( (res) => {
-			this.props.router.push('/')
+			this.props.router.push('/');
 		})
 		.catch( (err) => {
 			console.log(err);
@@ -87,8 +91,8 @@ const Listing = React.createClass({
 			//I am importing an array of adjectives and nouns and then randomly choosing one each time the page loads
 			//Primarily for humor. Not something we would actually want in a final product.
 			//Would eventually allow users to choose their own descriptors while they're initially creating their listings.
-			let randAdj = adj.adjective[Math.round(Math.random() * ((adj.adjective.length - 1) - 0) + 0)];
-			let randNoun = noun.noun[Math.round(Math.random() * ((noun.noun.length - 1) - 0) + 0)];
+			let randAdj = adj.adjective[Math.round(Math.random() * (adj.adjective.length - 1))];
+			let randNoun = noun.noun[Math.round(Math.random() * (noun.noun.length - 1))];
 			console.log(adj.adjective, noun.noun)
 
 			

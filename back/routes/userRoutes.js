@@ -61,6 +61,25 @@ function postNewUser(req, res) {
 	})
 }
 
+const fetchUser = (req, res) => {
+	if (!req.session.UserId) return res.sendStatus(401);
+	User.findById(req.session.UserId, {
+		include: [Listing, {
+			model: Booking,
+			include: [Listing]
+		}]
+	})
+	.then( (user) => {
+		res.send(user);
+	})
+	.catch( (err) => {
+		console.log("Problem returning logged in user info: ", err);
+		res.sendStatus(500);
+	})
+
+}
+
+
 // ********** ROUTES **********
 router.route('/')
 	.get(getAllUsers)
@@ -69,6 +88,9 @@ router.route('/')
 router.route('/userId/:id')
 	.get(getUserById)
 	.delete(deleteUser)
+
+router.route('/userprofile')
+	.get(fetchUser)
 
 
 

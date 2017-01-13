@@ -1,11 +1,8 @@
 const router = require("express").Router();
 const User = require("../models").User
 
-
+//handles the initial log in.
 function userLogin(req,res){
-  //  console.log("query:", req.query);
-  //  console.log("body:", req.body);
-	 // console.log('Session:', req.session);
   var userInfo = req.body;
   User.sync()
   .then(() => {
@@ -18,7 +15,7 @@ function userLogin(req,res){
   })
   .then((user) => {
     if(user) {
-      req.session.email = user.email;
+      req.session.UserId = user.id;
       req.session.save();
       console.log('Updated session?', req.session);
       res.send(user);
@@ -33,7 +30,9 @@ function userLogin(req,res){
 };
 
 
-
+//one more route on enter of app ====> check if req.session.id exists
+//if it does find user by id and send back data
+//if it doesn't send back a falsey value
 
 
 router.route('/')

@@ -63,7 +63,7 @@ const Listing = React.createClass({
 
 	book(event){
 		//Booking the user's stay
-		event.preventDefault()
+		event.preventDefault();
 		axios.post('/api/booking', {
 			checkIn: this.state.checkIn,
 			checkOut: this.state.checkOut,
@@ -72,7 +72,6 @@ const Listing = React.createClass({
 			ListingId: this.state.listing.id
 		})
 		.then( (res) => {
-			console.log(res);
 			this.props.router.push('/')
 		})
 		.catch( (err) => {
@@ -81,10 +80,8 @@ const Listing = React.createClass({
 	},
 
 	render(){
-		console.log("PROPS ================>", this.props)
-		console.log("STATE ====>", this.state)
 		//If statement that's just waiting for our initial GET request to return something
-		//renders a empty div if our state never gets populated.
+		//renders an empty div if our state never gets populated.
 		if (this.state.listing) {
 			let listing = this.state.listing
 			//I am importing an array of adjectives and nouns and then randomly choosing one each time the page loads

@@ -38,10 +38,12 @@ const AllListings = React.createClass({
 					{this.state.places.length=== 0 ? "Loading..." : this.state.places.map((place, idx)=> {
 						return (
 
-								<div className="oneList" key={idx}>
+								<Link to={"/listing/" + place.id} key={idx}>
+								 <div className="oneList">
 							  		<img  className="gridImg" src={place.images[0]} />
 							  		<p className="price"><strong>${place.price}</strong>/per night</p>
-							  	</div>
+									</div>
+								</Link>
 							
 						)
 					})}

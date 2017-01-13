@@ -36,7 +36,7 @@ var CreateListing=React.createClass({
 	},
 	render: function(){
 		return (
-			<div>
+			<center><div>
 			<h2 className="heading">Become a host!</h2>
 
 			<form onSubmit={this.postListing}>
@@ -76,7 +76,7 @@ var CreateListing=React.createClass({
 				<input 
 				className="input"
 				type="text"
-				placeholder="Guest guestLimit"
+				placeholder="Guest Limit"
 				onChange={this.handleChange.bind(this, "guestLimit")}
 				/>
 				<br /><br />
@@ -93,6 +93,7 @@ var CreateListing=React.createClass({
 				<input 
 				className="input"
 				type="text"
+				placeholder="Image URL"
 				onChange={this.handleChange.bind(this, "images")}
 				/>
 				<br /><br />
@@ -102,7 +103,7 @@ var CreateListing=React.createClass({
 				type="submit"
 				>Submit</button>
 			</form>
-			</div>
+			</div></center>
 		)
 	}
 })

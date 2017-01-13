@@ -19,13 +19,16 @@
 
 /* LISTINGS DISPLAY (GRID POTENTIALLY) */
 
-.gridImg {
+/*.gridImg {
 	height: 250px;
 	width: 350px;
-}
+}*/
 
-.oneListing {
+.oneList {
 	margin-left: 25px;
+  height: 350px;
+  width: 250px;
+  float: left;
 }
 
 /* */

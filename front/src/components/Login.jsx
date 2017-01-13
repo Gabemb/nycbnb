@@ -35,14 +35,19 @@ const Login = React.createClass({
 
 	render(){
 		return(
-			<div>
-
+			<center><div>	
+			<h2> Log Into Your Account: </h2>
+			<br />
 			Email:
-				<input onChange={this.updateEmail} type="text" name="email" />
+			<br />
+				<input className="input" onChange={this.updateEmail} type="text" name="email" />
+				<br />
 			Password
-				<input onChange={this.updatePassword} type="text" name="password" />
-				<button onClick={this.submitLoginInfo}>Login</button>
-			</div>
+			<br />
+				<input className="input" onChange={this.updatePassword} type="text" name="password" />
+				<br />
+				<button className="button" onClick={this.submitLoginInfo}>Login</button>
+			</div></center>
 		)
 	}
 })

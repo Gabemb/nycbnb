@@ -15,10 +15,7 @@ const App = React.createClass({
 		return(
 			<div>
 			
-			<img className='logo' src={require('../images/nycbnb_logo.png')} 
-
-              
-			/>
+			<Link to='/'><img className='logo' src={require('../images/nycbnb_logo.png')} /></Link>
 			
 			
 	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>

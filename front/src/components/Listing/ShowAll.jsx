@@ -8,18 +8,28 @@ const AllListings = React.createClass({
 		return {places: []}
 	},
 	componentDidMount(){
-		$.ajax({
-			url: '/api/listing',
-			type: "GET",
-			success: function(data){
-				console.log(data)
-			}
-		})
-		.done( (data) => {
-			this.setState({places: data})
-		})
+		if (this.props.params.borough) {
+			$.ajax({
+			url: '/api/listing/where/' + this.props.params.borough,
+			type: "GET"
+			})
+			.done( (data) => {
+				this.setState({places: data})
+			})
+		} else {
+			$.ajax({
+				url: '/api/listing',
+				type: "GET"
+			})
+			.done( (data) => {
+				this.setState({places: data})
+			})
+		}
 	},
 	render: function(){
+				console.log("PARAMS", this.props)
+				console.log(this.props.params.borough ? "it exists" : "it doesnt exist")
+
 		return(
 			<div>
 				<h2>All Available Listings</h2>
@@ -28,8 +38,8 @@ const AllListings = React.createClass({
 					{this.state.places.length=== 0 ? "Loading..." : this.state.places.map((place, idx)=> {
 						return (
 
-								<div className="oneListing">
-							  		<img key={idx} className="gridImg" src={place.images[0]} />
+								<div className="oneList" key={idx}>
+							  		<img  className="gridImg" src={place.images[0]} />
 							  		<p className="price"><strong>${place.price}</strong>/per night</p>
 							  	</div>
 							

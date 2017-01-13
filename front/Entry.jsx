@@ -21,6 +21,7 @@ render(
 				<Route path='Createlisting' component={CreateListing} />
 				<Route path='/listing/:listingId' component={Listing} />
 				<Route path='/listing' component={AllListings} />
+				<Route path='/listing/boro/:borough' component={AllListings} />
 				<Route path="/login" component={Login} />
 				<Route path="SignUpForm" component={SignUpForm} />
 			</Route>

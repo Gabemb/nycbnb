@@ -64,18 +64,25 @@ render: function () {
          {this.state.errorMessage}
           <div>
                 <h2>SIGN UP</h2>
-          <input name="firstName"  type="text" placeholder="First Name"
+          <input className="field" name="firstName"  type="text" placeholder="First Name"
            onChange={this.handleChange.bind(this, "firstName")}   />
 
+           <br />
 
-          <input name="lastName"  type="text" placeholder="Last Name"
+          <input className="field" name="lastName"  type="text" placeholder="Last Name"
            onChange={this.handleChange.bind(this, "lastName")} />
 
-          <input name="email"  type="email" placeholder="Email"
+           <br />
+
+          <input className="field" name="email"  type="email" placeholder="Email"
            onChange={this.handleChange.bind(this, "email")}   />
 
-          <input name="email"  type="email" placeholder="password"
+           <br />
+
+          <input className="field" name="email"  type="email" placeholder="password"
            onChange={this.handleChange.bind(this, "password")}  />
+
+           <br />
         <div>
         <button className="button"type="submit">Join Now</button>
         </div>

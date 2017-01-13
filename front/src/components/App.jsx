@@ -9,7 +9,7 @@ import SignUpForm from './User/user.jsx';
 import Login from './Login';
 import Home from './Home';
 import createListing from './CreateListing';
-import Account from './User/accountInfo.jsx';
+// import Account from './User/accountInfo.jsx';
 
 
 const App = React.createClass({
@@ -25,7 +25,6 @@ const App = React.createClass({
 	          
 	          <Link className ="NavLink" to='Login'>Log In</Link>
 
-               <Link to='Account'>Account</Link>
 
 
 	        <br />
@@ -40,3 +39,4 @@ const App = React.createClass({
 
 export default App;
 			
+               // <Link to='Account'>Account</Link>

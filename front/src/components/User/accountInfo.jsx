@@ -38,7 +38,7 @@ var Account = React.createClass({
 
 				<hr className="divider" />
 
-				<h3 className="boards">Curent Booking</h3>
+				<h3 className="boards">Curent Booking:</h3>
 
 				<center><ul className="list">
 					{!this.state.booking? null : this.state.booking.map((val, idx) => {

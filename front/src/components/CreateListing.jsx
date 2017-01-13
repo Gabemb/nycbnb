@@ -48,7 +48,7 @@ var CreateListing=React.createClass({
 				<br /><br />
 
 				<h3>What borough is your listing in?</h3>
-				<select name="borough" onChange={this.handleChange.bind(this, "borough")}>
+				<select className="borough" onChange={this.handleChange.bind(this, "borough")}>
 				    <option value="bronx">Bronx</option>
 				    <option value="brooklyn">Brooklyn</option>
 				    <option value="manhattan">Manhattan</option>

@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-
 //CSS
 import '../App.css';
 
 //Components
 import SignUpForm from './User/user.jsx'
+import Login from './Login';
+import Home from './Home';
 
 
 const App = React.createClass({
@@ -14,14 +15,11 @@ const App = React.createClass({
 		return(
 			<div>
 			
-			<img className='logo' src={require('../images/nycbnb_logo.png')} 
-
-              
-			/>
+			<Link to='/'><img className='logo' src={require('../images/nycbnb_logo.png')} /></Link>
 			
 			
 	          <Link className ="signlogin" to='SignUpForm'>Sign Up</Link>
-	          <Link className ="signlogin" to='#'>Log In</Link>
+	          <Link className ="signlogin" to='Login'>Log In</Link>
 
 	        <br />
 
